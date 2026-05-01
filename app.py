@@ -11,7 +11,7 @@ try:
     model = joblib.load('flight_price_model.pkl')
     scaler = joblib.load('scaler.pkl')
     with open('columns.pkl', 'rb') as f:
-        model_columns = pickle.load(f)
+        model_columns = joblib.load(f)
 except FileNotFoundError as e:
     st.error(f"Missing file: {e.filename}. Please ensure you have uploaded your .pkl files to GitHub.")
     st.stop()
